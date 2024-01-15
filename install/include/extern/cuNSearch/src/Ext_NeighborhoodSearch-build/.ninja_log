@@ -1,0 +1,12 @@
+# ninja log v5
+52	164	7270065681935339	CMakeFiles/cuNSearch.dir/Utils/IDFactory.cpp.obj	18a03ec21584478a
+18	4469	7270065724779056	CMakeFiles/cuNSearch.dir/src/cuNSearchKernels.cu.obj	6c08507f43a7d0ad
+34	924	7270065689461362	CMakeFiles/cuNSearch.dir/Utils/Timing.cpp.obj	dac9454f010cba47
+22	8500	7270065765110933	CMakeFiles/cuNSearch.dir/Utils/cuda_helper.cu.obj	72e6046b9d07e70c
+3	9326	7270065773364126	CMakeFiles/cuNSearch.dir/src/PointSet.cu.obj	d4d21cc8d74dfc18
+8	10049	7270065780525069	CMakeFiles/cuNSearch.dir/src/PointSetImplementation.cu.obj	6f9d54a01c715c9b
+11	10233	7270065782472699	CMakeFiles/cuNSearch.dir/src/cuNSearch.cu.obj	202a441d9739a817
+15	11747	7270065797527722	CMakeFiles/cuNSearch.dir/src/cuNSearchDeviceData.cu.obj	434652af840d758c
+11747	11801	7270065798250520	cuNSearch.lib	88bad9af638d05d8
+12	82	0	CMakeFiles/install.util	b44ec0a14673b30c
+10	50	0	CMakeFiles/install.util	b44ec0a14673b30c
