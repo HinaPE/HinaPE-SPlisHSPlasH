@@ -21,12 +21,7 @@ add_library(
         Entrance.cpp
 )
 
-# Link Houdini Toolkit
-target_link_libraries(
-        ${TARGET}
-        PUBLIC
-        Houdini
-
+set(Lib_SplisHSPlasHFluid
         CompactNSearch
         Discregrid
         glfw3
@@ -45,6 +40,15 @@ target_link_libraries(
 
         opengl32.lib
         glu32.lib
+)
+
+# Link Houdini Toolkit
+target_link_libraries(
+        ${TARGET}
+        PUBLIC
+        Houdini
+
+        ${Lib_SplisHSPlasHFluid}
 )
 target_link_directories(
         ${TARGET}
@@ -79,24 +83,7 @@ target_link_libraries(
         PUBLIC
         Houdini
 
-        CompactNSearch
-        Discregrid
-        glfw3
-        imgui
-        MD5
-        nfd
-        partio
-        PositionBasedDynamics
-        Simulation
-        SimulatorBase
-        SPlisHSPlasH
-        tinyexpr
-        Utilities
-        Utils
-        zlib
-
-        opengl32.lib
-        glu32.lib
+        ${Lib_SplisHSPlasHFluid}
 )
 target_link_directories(
         ${TEST_TARGET}
@@ -112,4 +99,11 @@ target_include_directories(
         install/include
         install/include/Simulator
         install/include/extern/glfw/deps
+)
+set(SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/install/resources")
+set(DEST_DIR "${CMAKE_BINARY_DIR}/resources")
+add_custom_command(
+        TARGET ${TEST_TARGET} POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E copy_directory ${SOURCE_DIR} ${DEST_DIR}
+        COMMENT "Copying directory from ${SOURCE_DIR} to ${DEST_DIR}"
 )
